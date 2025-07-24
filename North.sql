@@ -20,3 +20,8 @@ where (CategoryID = 1 and unitprice <=50) or (CategoryID = 8 and unitprice <=75)
 --5. ชื่อบริษัทลูกค้า ที่อยู่ใน ประเทศ USA ที่ไม่มีหมายเลข FAX  เรียงตามลำดับชื่อบริษัท 
 select CompanyName from customers
 where country = 'USA' and   Fax is null order by CompanyName
+
+--6. ต้องการรหัสลูกค้า ชื่อบริษัท และ ชื่อผู้ติดต่อ เฉพาะ ชื่อบริษัทที่มีคำว่า 'con'
+select CustomerID,CompanyName,ContactName
+from Customers
+where CompanyName like '%con%'
